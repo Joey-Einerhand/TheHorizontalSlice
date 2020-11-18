@@ -1,22 +1,202 @@
+html {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
 body {
     margin: 0;
-    overflow-x: scroll;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
+
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+}
+
+
+
+
+
+#headerRow {
+    position: relative;
+    top: 10px;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#headerRow h1 {
+    margin: 0;
+
+}
+
+#headerRow a {
+     margin-bottom: auto;
+}
+
+#headerRow a:visited {
+    color: black;
+}
+
+#headerRow a:link {
+    text-decoration: none;
+}
+
+#githubLink {
+    /* gets rid of whitespace between github logo and text */
+    margin-left: 10px;
+    font-size: 0;
+    margin-right: auto;
+}
+
+#githubLink img {
+    height: 53px;
+}
+
+#siteLink {
+
+    margin: auto;
+}
+
+#siteLinkBox {
+    display: none;
+}
+
+@media screen and (min-width: 992px) {
+    #siteLinkBox {
+        display: flex;
+    }
+
+    /* ensures all items are evenly spaced */
+    .box {
+        flex: 1;
+        display: flex;
+    }
+}
+
+#addImageLink {
+    justify-content: flex-end;
+    margin-top: auto;
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+#addImageLink > button {
+    padding: 20px 6px 20px 6px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    box-shadow: 0 6px #BBBBBB;
+}
+
+#addImageLink > button:active {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(4px);
+    box-shadow: 0 2px rgba(163, 163, 163, 0.75);
+}
+
+#addImageLink > button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Rows and pictures */
 
 #rowContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: flex-start;
 }
 
 .row {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    max-height: 100%;
+    height: 100%;
+}
+
+.pictureContainer {
+    height: 100%;
 }
 
 .verticalSlice {
-    max-width: 480px;
     height: 100%;
+}
+
+/* Row specific */
+#left {
+    flex-direction: row-reverse;
+}
+
+/* Footer */
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100vw;
+}
+
+.scrollButtons {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.leftButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+.rightButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+.fastForward {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 6px #BBBBBB;
+    padding: 0;
+    margin: 0 10px;
+}
+
+.fastForward:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.fastForward:active {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(4px);
+    box-shadow: 0 2px rgba(163, 163, 163, 0.75);
+}
+
+button.fastForward img {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    display: block;
+}
+
+#fastForwardEndLeft {
+    transform: rotate(180deg);
+}
+
+#fastForwardNextLeft {
+    transform: rotate(180deg);
+}
+
+#fastForwardEndRight {
+    background-image: url("");
+}
+
+#fastForwardNextRight {
+    background-image: url("");
 }
